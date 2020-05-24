@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Practica Java-cartas</title>
+    <script src="jquery/jquery-3.4.1.min.js"></script>
+  </head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="estilo.css" />
+  <link rel="stylesheet" href="root.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+  <body>
+    <header>
+      <div id="bienvenida" class="bienvenida" >
+          <div class="recuadro">
+            <p class="texto"> Bienvenido!</p>
+            <p class="texto">Selecciona el nivel que deseas jugar:</p>
+           <button id="nivelIntenso" >Nivel Intenso</button>
+           <button id="nivelRela">Nivel Basico</button>
+          </div>
+       </div>
+      <div class="control-Sup">
+        <h4 class="cabecera">Movimientos</h4>
+        <div id="contador">
+         <div id="controlMov"> <span id="utilizadas">00</span><span>/</span><span id="limite">20 </span></div>
+        </div>
+        <div id="conCronometro">
+        <div class="control-Sup" >
+        <h4 class="cabecera" >Tiempo</h4>
+         <div id="controlTime"> <span id="minutos"> 00</span><span>:</span><span id="segundos">00</span></div>
+        </div>
+        </div></div>
+              <div class="nivel">
+            <h4 class="cabecera" >Nivel</h4>
+            <div id="controlNivel"><span id="nivel">01</span></div>
+               </div> 
+      </div>
+      <button id="boton-nivel" class="boton-nivel">...</button>
+    </header>
+      
+     
+    <div id="mesa">
+      <div class="cartas">
+        <div class="cartastable">
+        </div>
+      </div>
+    </div> 
+  </div>
+     
+    <main> 
+    <div  class="feedback" > 
+      <div class="recuadro">
+      <p class="texto"> Haz finalizado el nivel:</p>
+      <p class="texto">Bien Hecho!</p>
+      <button   id="siguienteNivel" class ="siguienteNivel"> ¿Siguiente Nivel?</button> 
+      <button   class="reiniciar"> ¿Reiniciar?</button> 
+      </div>
+    </div>
+    <div  id ="gameOver"  class="gameOver" > 
+        <div class="recuadro">
+        <p class="texto"> Oh no:</p>
+        <p class="texto">Te has quedado sin Movimientos!</p>
+        <button   class="reiniciar"> ¿Reintentar?</button> 
+      </div>
+      </div>
+      <div  id ="timeOver"  class="timeOver" > 
+          <div class="recuadro">
+          <p class="texto"> Oh no:</p>
+          <p class="texto">Te has quedado sin tiempo!</p>
+          <button   class="reiniciar"> ¿Reintentar?</button> 
+        </div>
+        </div>
+    <div  id="juegoSuperado"  class="juegoSuperado" > 
+        <div class="recuadro">
+        <p class="texto"> En hora buena:</p>
+        <p class="texto">Haz superado todos los niveles!</p>
+        <button   class="reiniciar"> ¿Reiniciar?</button>
+        </div>
+  
+       
+    </main>
+    <div class="selecciona-nivel">
+      <button id="cierraNiveles" class="cierraNiveles">&times;</button>
+    <ul></ul>
+    </div>
+  
+
+
+    <audio src="sonidos/acierto.mp3"
+    class="sonidos" id="sonido-acierto" preload="auto" >
+    </audio>
+    <audio  src="sonidos/carta.mp3" class="sonidos" id="sonido-carta" preload="auto" ></audio>
+    <audio src="sonidos/error.mp3" class="sonidos" id="sonido-error" preload="auto" ></audio>
+    
+    <script src="js/usoJquery.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/baraja-reparte.js" ></script>
+    <script src="js/descubre-compara.js"></script>
+    <script src="js/acierto-error.js"></script>
+    <script src="js/cronometro.js"></script>
+    <script src="js/movimientos.js"></script>
+    <script src="js/finalizar.js"></script>
+    <script src="js/cambiar-nivel.js"></script>
+    <script src="js/fin-juego.js"></script>
+    <script src="js/menuNiveles.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/comenzarJuego.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,385 @@
+p,
+h4,
+span {
+  font-family: "Dosis", sans-serif;
+}
+
+.bienvenida {
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  width: 98%;
+  height: 520px;
+  display: none;
+  align-content: center;
+  justify-content: space-around;
+  border-radius: 3px;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+}
+.bienvenida.visible {
+  display: flex;
+}
+.control-Sup {
+  display: flex;
+  height: 6.5%;
+  max-height: 6.5%;
+  max-width: 100%;
+  flex-direction: row;
+  background-color: rgb(233, 230, 230);
+  color: rgb(238, 98, 98);
+  font-size: 30px;
+  border-radius: 2px;
+  padding-left: 5px;
+  padding-top: 3px;
+  position: relative;
+  z-index: -1;
+}
+.cabecera {
+  font-size: 10px;
+  color: rgb(88, 88, 88);
+  display: flex;
+  flex-direction: row;
+  align-content: row;
+  margin-top: -2px;
+  margin-left: 5px;
+}
+#controlMov {
+  margin-left: -68%;
+  padding-top: 5px;
+}
+#controlTime {
+  margin-left: -1%;
+  padding-top: 2px;
+}
+.nivel {
+  float: right;
+  color: rgb(238, 98, 98);
+  font-size: 30px;
+  margin-top: -3%;
+}
+#controlNivel {
+  padding: 0;
+  margin-top: -20px;
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+#mesa {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  max-width: 38%;
+  max-height: 30%;
+  /*margin-left: 35%;
+  margin-top: 15%;*/
+  margin: auto;
+  padding-top: 15%;
+}
+
+.cartas {
+  width: 50px;
+  height: 65px;
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  border-radius: 2px;
+  cursor: pointer;
+  border: 1px solid rgb(82, 66, 66);
+  margin-top: 5px;
+  float: left;
+  position: inherit;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  box-shadow: 9px 11px 22px -5px rgba(179, 177, 179, 1);
+}
+
+.cartastable {
+  width: 50px;
+  height: 65px;
+  background-color: white;
+  border-radius: 2px;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  border: 1px solid rgb(129, 90, 90);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.cartastable::selection {
+  background: transparent;
+}
+
+.cartas.descubierta {
+  transform: rotateY(-180deg);
+}
+
+@keyframes error {
+  10%,
+  90% {
+    transform: rotateY(-180deg) translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: rotateY(-180deg) translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotateY(-180deg) translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: rotateY(-180deg) translateX(4px);
+  }
+}
+
+@keyframes acierto {
+  from {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  20% {
+    transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-180) scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+
+.acertada {
+  pointer-events: none;
+}
+
+.acertada .cartastable {
+  animation: acierto 1.3s ease-in-out forwards;
+}
+.error {
+  animation: error 0.89s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.feedback,
+.juegoSuperado,
+.gameOver,
+.timeOver {
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  width: 98%;
+  height: 520px;
+  display: none;
+  align-content: center;
+  justify-content: space-around;
+  border-radius: 3px;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+}
+
+/*.iniciarJuego {
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  width: 98%;
+  height: 520px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  border-radius: 3px;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}*/
+
+.gameOver.visible,
+.juegoSuperado.visible,
+.feedback.visible,
+.timeOver.visible {
+  display: flex;
+}
+
+.recuadro {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 4px;
+  height: 25%;
+  width: 18%;
+  padding: 2% 2%;
+  box-shadow: 1px 7px 14px 0px rgba(5, 5, 5, 1);
+  color: rgb(88, 88, 88);
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.texto {
+  margin: auto;
+}
+
+.recuadro button {
+  margin: 5px 0;
+}
+#siguienteNivel {
+  cursor: pointer;
+  height: 30px;
+  width: 30%;
+  max-width: 30%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  padding: 0.3rem 4rem;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+/*button:hover,
+button:focus {
+  opacity: 0.9;
+  outline: 0;
+}*/
+
+.recuadro .siguienteNivel {
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  text-transform: capitalize;
+  margin: 0;
+}
+.reiniciar {
+  background-color: transparent;
+  border: transparent;
+  color: rgb(238, 98, 98);
+  font-weight: 600;
+  font-family: "Dosis", sans-serif;
+  cursor: pointer;
+}
+#nivelIntenso,
+#nivelRela {
+  background-color: transparent;
+  border: transparent;
+  color: rgb(238, 98, 98);
+  font-weight: 600;
+  font-family: "Dosis", sans-serif;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  margin-left: 0;
+}
+
+.sonidos {
+  display: none;
+}
+#conCronometro {
+  display: flex;
+}
+.cronometro-oculto {
+  display: none;
+}
+
+.boton-nivel {
+  /*position: absolute;*/
+  display: flex;
+  float: right;
+  border: red;
+  border-radius: 5px 5px;
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  width: 15px;
+  height: 14px;
+  margin-top: -16px;
+  cursor: pointer;
+  border-color: red;
+  padding-left: 2;
+  padding-top: -2px;
+  align-content: center;
+  font-weight: bold;
+  color: rgb(190, 183, 183);
+}
+
+.control-oculto {
+  display: none;
+}
+.selecciona-nivel {
+  position: fixed;
+  width: 130px;
+  right: 10;
+  top: 55;
+  bottom: 0;
+  padding: 1rem 2rem;
+  background: linear-gradient(to bottom, rgb(172, 42, 42), rgb(224, 115, 115));
+  height: 520px;
+  display: none;
+  border-radius: 3px 3px;
+  /*transform: translateX(200px);
+  transition: 0.3s;*/
+}
+
+.selecciona-nivel.visible {
+  display: flex;
+}
+
+.selecciona-nivel ul {
+  list-style: none;
+  padding-left: 0;
+  float: left;
+  margin-top: 20px;
+}
+
+.selecciona-nivel button {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: rgb(226, 214, 214);
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.selecciona-nivel button:hover {
+  font-size: 25px;
+}
+
+.cierraNiveles {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 3rem;
+  font-family: sans-serif;
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(190, 183, 183);
+}
